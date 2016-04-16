@@ -1,6 +1,16 @@
 
 public class User {
-    public static String getUser() {
-        return "user";
+
+    public static void main(String args[]) {
+
     }
+
+    public
+
+
+    public static String getUser() {
+        String name = "user";
+        return name;
+    }
+
 }
