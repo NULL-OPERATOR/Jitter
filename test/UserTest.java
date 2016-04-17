@@ -3,6 +3,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class UserTest {
 
     private User spike = new User("spike");
@@ -11,21 +13,21 @@ public class UserTest {
 
     @Test
     public void user_name_is_stored() {
-        Assert.assertEquals("spike", spike.getUser());
+        assertEquals("spike", spike.getUser());
     }
 
     @Test
     public void posts_a_new_tweet() {
         spike.newTweet("ugh");
         output.add("ugh");
-        Assert.assertEquals(output, spike.getTweets());
+        assertEquals(output, spike.getTweets());
     }
 
     @Test
     public void keeps_a_list_of_subscriptions() {
         spike.subscribeToUser("Nikesh");
         output.add("Nikesh");
-        Assert.assertEquals(output, spike.getSubscriptions());
+        assertEquals(output, spike.getSubscriptions());
     }
 
     @Test
@@ -33,7 +35,7 @@ public class UserTest {
         spike.subscribeToUser("Nikesh");
         spike.subscribeToUser("Nikesh");
         output.add("Nikesh");
-        Assert.assertEquals(output, spike.getSubscriptions());
+        assertEquals(output, spike.getSubscriptions());
     }
 
 }

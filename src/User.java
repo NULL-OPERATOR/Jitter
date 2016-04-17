@@ -15,7 +15,7 @@ public class User {
     }
 
     void newTweet(String tweet) {
-        tweets.add(tweet);
+        boolean add = tweets.add(tweet);
     }
 
     List getTweets() {

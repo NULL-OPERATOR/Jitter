@@ -11,16 +11,17 @@ public class Twitter {
             case "tweet":
                 newTweet();
                 break;
-            case "my tweets":
-                printUserTweets();
+            case "my-tweets":
+                System.out.println("my tweets:\n");
+                printUserTweets(user);
                 break;
-            case "all tweets":
+            case "all-tweets":
                 printAllTweets();
                 break;
             case "users":
                 listUsers();
                 break;
-            case "sign out":
+            case "sign-out":
                 signOut();
                 break;
             case "exit":
@@ -35,8 +36,12 @@ public class Twitter {
         user.newTweet(tweetScanner.next());
     }
 
-    private void printUserTweets() {
-
+    private void printUserTweets(User user) {
+        List tweets = user.getTweets();
+        String name = user.getUser();
+        for(Object tweet: tweets) {
+            System.out.println("\t" + name + ": " + tweet);
+        }
     }
 
     private HashMap getUsers() {
@@ -77,7 +82,7 @@ public class Twitter {
 
         Twitter twitter = new Twitter();
 
-        //add nikesh
+        //build nikesh
         User nikesh = new User("Nikesh");
         nikesh.newTweet("sunfish sunfish sunfish");
         twitter.addUser(nikesh);
@@ -96,13 +101,14 @@ public class Twitter {
 
 
         while(scanner.hasNextLine()) {
+            System.out.println("\nTwitter 2.0");
             System.out.println("Logged in as: " + twitter.user.getUser());
             System.out.println("enter a command:\n" +
                     "\t tweet      (post a tweet)\n" +
-                    "\t my tweets  (see your personal timeline)\n" +
-                    "\t all tweets (see all tweets)\n" +
+                    "\t my-tweets  (see your personal timeline)\n" +
+                    "\t all-tweets (see all tweets)\n" +
                     "\t users      (see a list of users)\n" +
-                    "\t sign out\n" +
+                    "\t sign-out\n" +
                     "\t exit\n");
             twitter.selectOption(scanner.next());
         }
