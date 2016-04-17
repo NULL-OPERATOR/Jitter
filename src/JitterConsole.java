@@ -17,7 +17,7 @@ public class JitterConsole {
             "\t [0] exit\n";
 
     private String userMenu = "User options:\n" +
-            "\t [1] View a user\n" +
+            "\t [1] View a users timeline\n" +
             "\t [2] Subscribe to a user\n" +
             "\t [0] back\n";
 
@@ -32,37 +32,32 @@ public class JitterConsole {
         runMainMenu();
     }
 
+    // for demonstration purposes
     private void hardCodeNikesh() {
         User nikesh = new User("Nikesh", new Timeline(), new Subscriptions());
         nikesh.post("sunfish sunfish sunfish");
         jitter.addUser("Nikesh", nikesh);
     }
-
+    //
 
     private void initialSetup() {
         out.println("Input user name:");
         String name = scanner.next();
+        checkUser(name);
+    }
+
+    private void checkUser(String name) {
         if (Objects.equals(name, "Nikesh")) {
             out.println("Username taken, please try again");
             initialSetup();
-        } else {
-            setUser(name);
-        }
+        } else jitter.newUser(name);
     }
 
     private void runMainMenu() {
         while(scanner.hasNextLine()) {
-            printMenu();
+            out.println(mainMenu);
             selectOption(scanner.next());
         }
-    }
-
-    private void setUser(String username) {
-        jitter.newUser(username);
-    }
-
-    private void printMenu() {
-        out.println(mainMenu);
     }
 
     private void selectOption(String command) {
@@ -84,16 +79,39 @@ public class JitterConsole {
 
     private void printPosts() {
         List<Post> posts = jitter.getPosts();
+        printSelectedPosts(posts);
+    }
+
+    private void printSelectedPosts(List<Post> posts) {
         for(Post post: posts) { out.print(post.getPost() + "\n"); }
     }
 
     private void printAllTweets() {}
 
     private void usersMenu() {
-        Scanner scanner = new Scanner(System.in);
         printUsers();
-//        out.println("")
-//        while()
+        printUserMenu();
+        String choice = scanner.next();
+        switch(choice) {
+            case "1": viewUser(); break;
+            case "2": subscribeUser(); break;
+            case "0": break;
+        }
+    }
+
+    private void viewUser() {
+        out.println("input user name:");
+        String name = scanner.next();
+        List<Post> posts = jitter.getOtherUserPosts(name);
+        printSelectedPosts(posts);
+    }
+
+    private void printUserMenu() {
+        out.println(userMenu);
+    }
+
+    private void subscribeUser() {
+
     }
 
     private void printUsers() {
@@ -107,7 +125,6 @@ public class JitterConsole {
         Jitter jitter = new Jitter(users);
         Scanner scanner = new Scanner(System.in);
         JitterConsole console = new JitterConsole(jitter, scanner);
-
         console.run();
     }
 }
