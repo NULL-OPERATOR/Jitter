@@ -1,8 +1,24 @@
 import java.util.Scanner;
 
+import static java.lang.System.out;
+
 public class TwitterConsole {
 
-    Twitter twitter = new Twitter();
+    private Twitter twitter = new Twitter();
+
+    String menu = "enter a command:\n" +
+            "\t tweet      (post a tweet)\n" +
+            "\t my-tweets  (see your personal timeline)\n" +
+            "\t all-tweets (see all tweets)\n" +
+            "\t users      (see a list of users)\n" +
+            "\t log-out\n" +
+            "\t exit\n";
+
+    private void printMenu() {
+        out.println("\nTwitter 2.0");
+        out.println("Logged in as: " + currentUser());
+        out.println(menu);
+    }
 
     private void hardcodeNikesh() {
         User nikesh = new User("Nikesh");
@@ -19,7 +35,7 @@ public class TwitterConsole {
     }
 
 
-    public void selectOption(String command) {
+    private void selectOption(String command) {
         switch(command) {
             case "tweet":
                 twitter.newTweet();
@@ -47,23 +63,14 @@ public class TwitterConsole {
 
         console.hardcodeNikesh();
 
-        System.out.print("welcome to console java twitter\n");
+        out.print("welcome to console java twitter\n");
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Input user name:\n");
+        out.println("Input user name:\n");
         console.startupUser(scanner.next());
 
-        while(true) {
-            if (!(true)) break;
-            System.out.println("\nTwitter 2.0");
-            System.out.println("Logged in as: " + console.currentUser());
-            System.out.println("enter a command:\n" +
-                    "\t tweet      (post a tweet)\n" +
-                    "\t my-tweets  (see your personal timeline)\n" +
-                    "\t all-tweets (your tweets + followed users)\n" +
-                    "\t users      (see a list of users)\n" +
-                    "\t log-out\n" +
-                    "\t exit\n");
+        while(scanner.hasNextLine()) {
+            console.printMenu();
             console.selectOption(scanner.next());
         }
 

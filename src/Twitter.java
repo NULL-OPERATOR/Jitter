@@ -4,7 +4,7 @@ import java.util.*;
 public class Twitter {
 
     private User user;
-    private HashMap<String, User> users = new HashMap();
+    private HashMap users = new HashMap();
 
 
     void newTweet() {
