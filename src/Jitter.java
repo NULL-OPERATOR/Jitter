@@ -20,20 +20,20 @@ public class Jitter {
     }
 
     public void newPost(String message) {
-        user.post(message);
+        this.user.post(message);
     }
 
-    public List getPosts() {
+    public List<Post> getPosts() {
         return user.getPosts();
     }
 
-    public List getOtherUserPosts(String user) {
+    public List<Post> getOtherUserPosts(String user) {
         User otherUser = users.getUser(user);
         return otherUser.getPosts();
     }
 
-    public void userSubscribe(String user) {
-        user.subscribe(user);
+    public void subscribe(String user) {
+        this.user.subscribe(user);
     }
 
     private User setupUser(String userName) {

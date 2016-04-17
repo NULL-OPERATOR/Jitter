@@ -74,11 +74,11 @@ public class JitterConsole {
     private void newPost() {
         out.print("Input message:\n");
         Scanner scanner = new Scanner(System.in);
-        jitter.newPost(scanner.next());
+        this.jitter.newPost(scanner.next());
     }
 
     private void printPosts() {
-        List<Post> posts = jitter.getPosts();
+        List<Post> posts = this.jitter.getPosts();
         printSelectedPosts(posts);
     }
 
@@ -104,6 +104,7 @@ public class JitterConsole {
         String name = scanner.next();
         List<Post> posts = jitter.getOtherUserPosts(name);
         printSelectedPosts(posts);
+        usersMenu();
     }
 
     private void printUserMenu() {
@@ -111,7 +112,10 @@ public class JitterConsole {
     }
 
     private void subscribeUser() {
-
+        out.println("input user name:");
+        String name = scanner.next();
+        this.jitter.subscribe(name);
+        usersMenu();
     }
 
     private void printUsers() {
