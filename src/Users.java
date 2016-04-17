@@ -19,7 +19,7 @@ public class Users {
     public String getUsernames() {
         String names = "";
         for (Object key : users.keySet()) {
-            names += (key.toString());
+            names += (" " + key.toString());
         }
         return names;
     }

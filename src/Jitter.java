@@ -34,14 +34,6 @@ public class Jitter {
 
 
 
-
-
-
-
-
-
-
-
     void printAllTweets() {
         // for each user subscription
         // add all tweets to a list & sort by date/time
