@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c58389ef-d52e-4a55-bba2-fe5a372dc9f3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/java_twitter/Twitter.class" afterPath="$PROJECT_DIR$/out/production/java_twitter/Twitter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/java_twitter/TwitterTest.class" afterPath="$PROJECT_DIR$/out/test/java_twitter/TwitterTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Twitter.java" afterPath="$PROJECT_DIR$/src/Twitter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User.java" afterPath="$PROJECT_DIR$/src/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/UserTest.java" afterPath="$PROJECT_DIR$/test/UserTest.java" />
     </list>
     <ignored path="java_twitter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,8 +50,8 @@
           <file leaf-file-name="Twitter.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Twitter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="458">
-                  <caret line="112" column="49" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
+                <state relative-caret-position="488">
+                  <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
                   <folding>
                     <element signature="e#1193#1194#0" expanded="true" />
                     <element signature="e#1221#1222#0" expanded="true" />
@@ -797,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Twitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="112" column="49" selection-start-line="112" selection-start-column="49" selection-end-line="112" selection-end-column="49" />
+        <state relative-caret-position="488">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="e#1193#1194#0" expanded="true" />
             <element signature="e#1221#1222#0" expanded="true" />

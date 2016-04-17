@@ -77,19 +77,18 @@ public class Twitter {
         // re-route to login
     }
 
+    private void hardcodeNikesh() {
+        User nikesh = new User("Nikesh");
+        nikesh.newTweet("sunfish sunfish sunfish");
+        twitter.addUser(nikesh);
+    }
+
 
     public static void main(String args[]) {
 
         Twitter twitter = new Twitter();
 
-        //build nikesh
-        User nikesh = new User("Nikesh");
-        nikesh.newTweet("sunfish sunfish sunfish");
-        twitter.addUser(nikesh);
-
-        //testing stuff
-        System.out.println(twitter.users.get("Nikesh").getUser());
-        System.out.println(twitter.getUsers());
+        twitter.hardcodeNikesh();
 
         // setup scanner
         System.out.print("welcome to console java twitter\n");
