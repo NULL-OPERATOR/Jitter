@@ -16,10 +16,10 @@ public class Users {
         }
     }
 
-    public List getUsernames() {
-        List names = new ArrayList();
+    public String getUsernames() {
+        String names = "";
         for (Object key : users.keySet()) {
-            names.add(key.toString());
+            names += (key.toString());
         }
         return names;
     }
@@ -27,5 +27,6 @@ public class Users {
     public User getUser(String user) {
         return (User) users.get(user);
     }
+
 
 }

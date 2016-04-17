@@ -7,12 +7,16 @@ public class Jitter {
 
     public Jitter(Users users) { this.users = users; }
 
-    public String getUser() { return user.getName(); }
+    public String getUsernames() { return users.getUsernames(); }
 
-    public void newUser(String newUser) {
-        User user = new User(newUser, new Timeline(), new Subscriptions());
-        users.add(newUser, user);
+    public void newUser(String userName) {
+        User user = setupUser(userName);
+        users.add(userName, user);
         this.user = user;
+    }
+
+    public void addUser(String userName, User user) {
+        users.add(userName, user);
     }
 
     public void newPost(String message) {
@@ -23,7 +27,9 @@ public class Jitter {
         return user.getPosts();
     }
 
-
+    private User setupUser(String userName) {
+        return new User(userName, new Timeline(), new Subscriptions());
+    }
 
 
 

@@ -12,10 +12,6 @@ public class User {
         this.subscriptions = subscriptions;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void post(String post) {
         timeline.add(post, name);
     }

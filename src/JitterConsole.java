@@ -6,26 +6,26 @@ public class JitterConsole {
 
     private Jitter jitter;
 
-    private String menu = "enter a command:\n" +
-            "\t tweet      (post a tweet)\n" +
-            "\t my-tweets  (see your personal timeline)\n" +
-            "\t all-tweets (see all tweets)\n" +
-            "\t users      (see a list of users)\n" +
-            "\t log-out\n" +
-            "\t exit\n";
+    private String mainMenu = "enter a command:\n" +
+            "\t [1] post a tweet\n" +
+            "\t [2] see your personal timeline\n" +
+            "\t [3] see all tweets\n" +
+            "\t [4] see a list of users\n" +
+            "\t [5] log-out\n" +
+            "\t [0] exit\n";
+
+    private String userMenu = "User options:\n" +
+            "\t [1] View user\n" +
+            "\t [2] Subscribe user\n" +
+            "\t [0] back\n";
 
     public JitterConsole(Jitter jitter) {
         this.jitter = jitter;
+        setupNikesh(); //
     }
 
     private void printMenu() {
-        out.println("\nJitter 2.0");
-        out.println("Logged in as: " + currentUser());
-        out.println(menu);
-    }
-
-    private String currentUser() {
-        return jitter.getUser();
+        out.println(mainMenu);
     }
 
     private void setUser(String username) {
@@ -45,11 +45,19 @@ public class JitterConsole {
         }
     }
 
-//    private void hardcodeNikesh() {
-//        User nikesh = new User("Nikesh");
-//        nikesh.newTweet("sunfish sunfish sunfish");
-//        jitter.addUser(nikesh);
-//    }
+    private void usersMenu() {
+        Scanner scanner = new Scanner(System.in);
+        out.println("Current users:");
+        out.println(jitter.getUsernames());
+//        out.println("")
+//        while()
+    }
+
+    private void setupNikesh() {
+        User nikesh = new User("Nikesh", new Timeline(), new Subscriptions());
+        nikesh.post("sunfish sunfish sunfish");
+        jitter.addUser("Nikesh", nikesh);
+    }
 //
 
 //
@@ -68,22 +76,22 @@ public class JitterConsole {
 
     private void selectOption(String command) {
         switch(command) {
-            case "tweet":
+            case "1":
                 newPost();
                 break;
-            case "my-tweets":
+            case "2":
                 printPosts();
                 break;
-//            case "all-tweets":
+//            case "3":
 //                jitter.printAllTweets();
 //                break;
-//            case "users":
-//                usersMenu();
-//                break;
-//            case "log-out":
+            case "4":
+                usersMenu();
+                break;
+//            case "5":
 //                jitter.logOut();
 //                break;
-            case "exit":
+            case "0":
                 System.exit(0);
         }
     }
@@ -98,7 +106,6 @@ public class JitterConsole {
         Users users = new Users();
         Jitter jitter = new Jitter(users);
         JitterConsole console = new JitterConsole(jitter);
-//        console.hardcodeNikesh();
 
         out.print("welcome to Java console Jitter\n");
         Scanner scanner = new Scanner(System.in);
