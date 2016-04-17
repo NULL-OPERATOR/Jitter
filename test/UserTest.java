@@ -13,7 +13,7 @@ public class UserTest {
 
     @Test
     public void user_name_is_stored() {
-        assertEquals("spike", spike.getUser());
+        assertEquals("spike", spike.getUsername());
     }
 
     @Test

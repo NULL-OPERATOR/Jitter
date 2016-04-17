@@ -10,7 +10,7 @@ public class User {
         this.name = name;
     }
 
-    String getUser() {
+    String getUsername() {
         return name;
     }
 
