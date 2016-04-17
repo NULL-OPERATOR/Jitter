@@ -5,7 +5,7 @@ public class User {
     private String name;
     private List tweets = new ArrayList();
     private ArrayList subscriptions = new ArrayList();
-    
+
     User(String name) {
         this.name = name;
     }
