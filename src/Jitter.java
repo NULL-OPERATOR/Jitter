@@ -3,13 +3,38 @@ import java.util.*;
 public class Jitter {
 
     private User user;
+    private Users users;
 
+    public Jitter(Users users) { this.users = users; }
 
-    void newUser(String newUser) {
-        this.user = new User(newUser);
+    public String getUser() { return user.getName(); }
+
+    public void newUser(String newUser) {
+        User user = new User(newUser, new Timeline(), new Subscriptions());
+        users.add(newUser, user);
+        this.user = user;
     }
 
-    String getCurrentUser() { return user.getName(); }
+    public void newPost(String message) {
+        user.post(message);
+    }
+
+    public List getPosts() {
+        return user.getPosts();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     void printAllTweets() {
         // for each user subscription
@@ -32,18 +57,18 @@ public class Jitter {
         // re-route to login
     }
 
-
-    void newTweet(String tweet) {
-        user.newTweet(tweet);
-    }
-
-    List listTweets() {
-        List tweets = user.getTweets();
-        String name = user.getUsername();
-        for(Object tweet: tweets) {
-            System.out.println("\t" + name + ": " + tweet);
-        }
-    }
+//
+//    void newTweet(String tweet) {
+//        user.newTweet(tweet);
+//    }
+//
+//    List listTweets() {
+//        List tweets = user.getTweets();
+//        String name = user.getUsername();
+//        for(Object tweet: tweets) {
+//            System.out.println("\t" + name + ": " + tweet);
+//        }
+//    }
 
 
 }

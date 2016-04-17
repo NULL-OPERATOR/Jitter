@@ -8,7 +8,12 @@ public class Users {
     private HashMap users = new HashMap();
 
     public void add(String name, User user) {
-        users.put(name, user);
+        if(users.containsKey(name)) {
+            users.replace(name, user);
+        }
+        else {
+            users.put(name, user);
+        }
     }
 
     public List getUsernames() {
