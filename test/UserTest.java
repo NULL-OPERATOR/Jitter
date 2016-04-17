@@ -6,7 +6,9 @@ import java.util.List;
 
 public class UserTest {
 
-    User spike = new User("spike");
+    private User spike = new User("spike");
+    private List output = new ArrayList();
+
 
     @Test
     public void user_name_is_stored() {
@@ -16,7 +18,6 @@ public class UserTest {
     @Test
     public void posts_a_new_tweet() {
         spike.newTweet("ugh");
-        List output = new ArrayList();
         output.add("ugh");
         Assert.assertEquals(output, spike.getTweets());
     }
@@ -24,7 +25,14 @@ public class UserTest {
     @Test
     public void keeps_a_list_of_subscriptions() {
         spike.subscribeToUser("Nikesh");
-        List output = new ArrayList();
+        output.add("Nikesh");
+        Assert.assertEquals(output, spike.getSubscriptions());
+    }
+
+    @Test
+    public void doesnt_add_duplicate_subscriptions() {
+        spike.subscribeToUser("Nikesh");
+        spike.subscribeToUser("Nikesh");
         output.add("Nikesh");
         Assert.assertEquals(output, spike.getSubscriptions());
     }

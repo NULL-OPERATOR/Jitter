@@ -4,12 +4,8 @@ public class User {
 
     private String name;
     private List tweets = new ArrayList();
-    private List<String> subscriptions = new ArrayList();
-
-    public static void main(String args[]) {
-
-    }
-
+    private ArrayList subscriptions = new ArrayList();
+    
     User(String name) {
         this.name = name;
     }
@@ -27,7 +23,9 @@ public class User {
     }
 
     void subscribeToUser(String user) {
-        subscriptions.add(user);
+        if (!subscriptions.contains(user)) {
+            subscriptions.add(user);
+        }
     }
 
     List getSubscriptions() {
