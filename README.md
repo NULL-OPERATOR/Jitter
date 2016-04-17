@@ -1,2 +1,2 @@
-## Java Console Twitter
+## Java Console Jitter
 

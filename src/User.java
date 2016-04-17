@@ -3,33 +3,32 @@ import java.util.*;
 public class User {
 
     private String name;
-    private List tweets = new ArrayList();
-    private ArrayList subscriptions = new ArrayList();
+    private Timeline timeline;
+    private Subscriptions subscriptions;
 
-    User(String name) {
+    public User(String name, Timeline timeline, Subscriptions subscriptions) {
         this.name = name;
+        this.timeline = timeline;
+        this.subscriptions = subscriptions;
     }
 
-    String getUsername() {
+    public String getName() {
         return name;
     }
 
-    void newTweet(String tweet) {
-        boolean add = tweets.add(tweet);
+    public void post(String post) {
+        timeline.add(post, name);
     }
 
-    List getTweets() {
-        return tweets;
+    public List getPosts() {
+        return timeline.getPosts();
     }
 
-    void subscribeToUser(String user) {
-        if (!subscriptions.contains(user)) {
-            subscriptions.add(user);
-        }
+    public void subscribe(String user) {
+        subscriptions.add(user);
     }
 
-    List getSubscriptions() {
-        return subscriptions;
+    public List getSubscriptions() {
+        return subscriptions.getSubscriptions();
     }
-
 }

@@ -1,10 +1,10 @@
+import java.util.List;
 import java.util.Scanner;
-
 import static java.lang.System.out;
 
-public class TwitterConsole {
+public class JitterConsole {
 
-    private Twitter twitter = new Twitter();
+    private Jitter jitter = new Jitter();
 
     String menu = "enter a command:\n" +
             "\t tweet      (post a tweet)\n" +
@@ -15,7 +15,7 @@ public class TwitterConsole {
             "\t exit\n";
 
     private void printMenu() {
-        out.println("\nTwitter 2.0");
+        out.println("\nJitter 2.0");
         out.println("Logged in as: " + currentUser());
         out.println(menu);
     }
@@ -23,47 +23,61 @@ public class TwitterConsole {
     private void hardcodeNikesh() {
         User nikesh = new User("Nikesh");
         nikesh.newTweet("sunfish sunfish sunfish");
-        twitter.addUser(nikesh);
+        jitter.addUser(nikesh);
     }
 
     private void startupUser(String username) {
-        twitter.setCurrentUser(username);
+        jitter.setCurrentUser(username);
     }
 
     private String currentUser() {
-        return twitter.getCurrentUser();
+        return jitter.getCurrentUser();
+    }
+
+    private void newTweet() {
+        Scanner tweetScanner = new Scanner(System.in);
+        String tweet = tweetScanner.next();
+        jitter.newTweet(tweet);
+    }
+
+    private void printTweets() {
+        jitter.
     }
 
 
     private void selectOption(String command) {
         switch(command) {
             case "tweet":
-                twitter.newTweet();
+                newTweet();
                 break;
             case "my-tweets":
-                twitter.printUserTweets();
+                printTweets();
                 break;
             case "all-tweets":
-                twitter.printAllTweets();
+                jitter.printAllTweets();
                 break;
             case "users":
-                twitter.listUsers();
+                usersMenu();
                 break;
             case "log-out":
-                twitter.logOut();
+                jitter.logOut();
                 break;
             case "exit":
                 System.exit(0);
         }
     }
 
+    private void usersMenu() {
+        List users = (List) jitter.getUsers();
+
+    }
+
     public static void main(String args[]) {
 
-        TwitterConsole console = new TwitterConsole();
-
+        JitterConsole console = new JitterConsole();
         console.hardcodeNikesh();
 
-        out.print("welcome to console java twitter\n");
+        out.print("welcome to Java console Jitter\n");
         Scanner scanner = new Scanner(System.in);
 
         out.println("Input user name:\n");
