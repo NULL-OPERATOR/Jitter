@@ -30,7 +30,48 @@ public class Twitter {
     }
 
     private void newTweet() {
+        Scanner tweetScanner = new Scanner(System.in);
+        System.out.println("Write message:\n");
+        user.newTweet(tweetScanner.next());
     }
+
+    private void printUserTweets() {
+
+    }
+
+    private HashMap getUsers() {
+        return users;
+    }
+
+    private void addUser(User user) {
+        this.users.put(user.getUser(), user);
+    }
+
+    private void setCurrentUser(String newUser) {
+        this.user = new User(newUser);
+    }
+
+    private void printAllTweets() {
+        // for loop using user subscribers
+        // add all tweets to a list & sort by date/time
+        // print all tweets with user name attached
+    }
+    private void listUsers() {
+        // list users
+        // list commands for users
+    }
+    private void userOptions() {
+        // view users timeline
+        // subscribe to user
+        // go back to main menu
+    }
+
+    private void signOut() {
+        // put user into users,
+        // clear user
+        // re-route to login
+    }
+
 
     public static void main(String args[]) {
 
@@ -40,6 +81,18 @@ public class Twitter {
         User nikesh = new User("Nikesh");
         nikesh.newTweet("sunfish sunfish sunfish");
         twitter.addUser(nikesh);
+
+        //testing stuff
+        System.out.println(twitter.users.get("Nikesh").getUser());
+        System.out.println(twitter.getUsers());
+
+        // setup scanner
+        System.out.print("welcome to console java twitter\n");
+        Scanner scanner = new Scanner(System.in);
+
+        // add a sign in feature
+        System.out.println("Input user name:\n");
+        twitter.setCurrentUser(scanner.next());
 
 
         while(scanner.hasNextLine()) {
