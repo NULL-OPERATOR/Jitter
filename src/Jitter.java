@@ -39,6 +39,4 @@ public class Jitter {
     private User setupUser(String userName) {
         return new User(userName, new Timeline(), new Subscriptions());
     }
-
-
 }

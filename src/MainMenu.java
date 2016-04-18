@@ -95,12 +95,4 @@ public class MainMenu {
     }
 
     private void logOut() {}
-
-    public static void main(String args[]) {
-        Users users = new Users();
-        Jitter jitter = new Jitter(users);
-        Scanner scanner = new Scanner(System.in);
-        JitterConsole console = new JitterConsole(jitter, scanner);
-        console.run();
-    }
 }

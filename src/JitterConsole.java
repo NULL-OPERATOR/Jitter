@@ -18,7 +18,7 @@ public class JitterConsole {
     public void run() {
         hardCodeNikesh();
         initialSetup();
-        runMainMenu();
+        mainMenu.run();
     }
 
     // so that there is one user (Nikesh) already setup
@@ -40,10 +40,6 @@ public class JitterConsole {
             out.println("Username taken, please try again");
             initialSetup();
         } else jitter.newUser(name);
-    }
-
-    private void runMainMenu() {
-        mainMenu.run();
     }
 
     public static void main(String args[]) {
