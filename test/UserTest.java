@@ -10,17 +10,11 @@
 //    private User spike = new User("spike");
 //    private List output = new ArrayList();
 //
-//
-//    @Test
-//    public void user_name_is_stored() {
-//        assertEquals("spike", spike.getUsername());
-//    }
-//
 //    @Test
 //    public void posts_a_new_tweet() {
-//        spike.newTweet("ugh");
+//        spike.post("ugh");
 //        output.add("ugh");
-//        assertEquals(output, spike.getTweets());
+//        assertEquals(output, spike.get());
 //    }
 //
 //    @Test
