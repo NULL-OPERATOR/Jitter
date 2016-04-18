@@ -3,7 +3,7 @@
 a java twitter example, using the console
 
 First crack at a Java project, pretty damn fun, still lots to learn, and a lot of areas to redo, and
-a vast many more tests that should have been written/need fixing. Although I did TDD to begin with, I kept playing/tweaking/changing dramatically things as I learnt more.
+a vast many more tests that should have been written/need fixing. Although I did TDD to begin with, I kept playing/tweaking/changing things too dramatically as I learnt more.
 
 ----
 #### To run
