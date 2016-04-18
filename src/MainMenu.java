@@ -46,7 +46,7 @@ public class MainMenu {
     private void newPost() {
         out.print("Input message:\n");
         Scanner scanner = new Scanner(System.in);
-        this.jitter.newPost(scanner.next());
+        this.jitter.newPost(scanner.nextLine());
     }
 
     private void printPosts() {

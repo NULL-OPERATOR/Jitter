@@ -22,6 +22,12 @@ then enter this to run the console app
 ```
 $ java JitterConsole
 ```
+
+#### Example
+
+![Image Alt](img/screenshot1.png)
+
+
 #### Tech
 
  - Java / JUnit
